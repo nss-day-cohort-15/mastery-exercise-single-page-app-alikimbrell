@@ -26,7 +26,7 @@ var CarLot = (function() {
 })(CarLot || {});
 
 
-console.log("loaded");
+// console.log(CarLot);
 
 
 
