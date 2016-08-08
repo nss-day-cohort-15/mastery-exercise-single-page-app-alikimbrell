@@ -1,42 +1,45 @@
-
 function populatePage(inventory) {
-  
-  // Loop over the inventory and populate the page.
 
-  var carList = getElementById("allCardsDiv");
-  // ^ getting the div from the DOM that will eventually receive the output
-  
   var output = "";
-  // ^ setting up an empty object to feed the info from the global variable CarLot i.e. take inventory out of function because inventory is undefined outside of the function.
 
-  inventory.forEach(function(currentCar) {
-    // ^ everything between the brackets is the function currentCar().
-    if(idx$3===0) {
-      output += '<div class="row">';
-    }
-    output += `<h2>cars.year+" "+cars.make+" "+cars.model+", "+cars.color</h2>`;
-    output += `<h3>cars.price</h3>`;
-    output += `<p>cars.description</p>`;
+  inventory.forEach(function (currentCar) {
+// console.log(currentCar);
 
-    if(cars.purchased===false){
+    output += `<h2>${currentCar.year+" "+currentCar.make+" "+currentCar.model+", "+currentCar.color}</h2>`;
+    output += `<h3>${currentCar.price}</h3>`;
+    output += `<p>${currentCar.description}</p>`;
+    if(currentCar.purchased === false) {
       output += `<h4>FOR SALE!</h4>`
     } else {
       output += `<h4>Out-of-stock</h4>`
     }
+    for(var i=0; i<=currentCar.length; i++){
+      if (i % 3 === 0) {
+        output += '<div class="row">';
+      }
 
-  })  
+    }
+  // console.log(output)
+  return output; 
+});
+
+  var carList = document.getElementById("allCardsDiv");
+  carList.innerHTML = output;
+
+  CarLot.activateEvents();
 }
-carList.innerHTML = output;
+
+CarLot.loadInventory(populatePage);
 
 
 
-// Now that the DOM is loaded, establish all the event listeners needed
+// TO GET INTO INDIVIDUAL CARDS?
+// var newCard = document.createElement('li');
+// var newText = document.createTextNode(currentCar.make.model);
+// newCard.appendChild(newText);
+// var position = document.getElementsByTagName('ul')[i];
+// position.appendChild(newCard)
 
-// CarLot.activateEvents();
-
-// Load the inventory and send a callback function to be invoked after the process is complete
-
-// CarLot.loadInventory();
 
 
 

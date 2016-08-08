@@ -1,3 +1,15 @@
 h1 {
   color: green;
 }
+
+.card {
+  border: 4px solid <color of car>;
+}
+
+.cardClicked {
+  border:4px;
+  background-color: #e6e6e6;
+}
+
+/*7.  Put a border around the car information that matches the color of the car. To make this easier, set the color property value to an existing named CSS color.
+8.  When you click on one of the car elements, change the width of the border to a higher value, and change the background color to any other color of your choosing.*/

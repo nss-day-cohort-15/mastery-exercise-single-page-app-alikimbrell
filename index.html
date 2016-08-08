@@ -1,7 +1,3 @@
-<!-- You are going to using the Bootstrap grid to lay out your HTML structure. -->
-
-<!-- When your page first loads, you need to use an XHR to load the contents of the JSON file, and parse them into a native JavaScript object. -->
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,10 +9,8 @@
   <header>
     <h1>Single Page Applications Quiz</h1>
   </header>
-  
-<div class="container" id="allCardsDiv">
+<div class="container">
   <nav class="navbar navbar-default navbar-static-top">
-  <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <form class="navbar-form navbar-left">
         <div class="form-group">
@@ -26,18 +20,13 @@
       </form>
     </div><!-- /.navbar-collapse -->
   </nav>
+  <div id="allCardsDiv"></div>
+</div>
+<script src="CarLot.js"></script>
+<script src="ActivateEvents.js"></script>
+<script src="quiz.js"></script>
+<script src="Styling.js"></script>
 
-
-
-  </div>
-
-  <script src="quiz.js"></script>
-
-  <script src="CarLot.js"></script>
-  
-  <!-- <script src="Styling.js"></script> -->
-
-  <!-- <script src="ActivateEvents.js"></script> -->
 
 </body>
 </html>

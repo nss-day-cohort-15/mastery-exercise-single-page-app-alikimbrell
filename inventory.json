@@ -1,14 +1,11 @@
-// B1. Create an array of cars in the inventory.json file (see example structure below). Put at least three cars in the array.
-
- 
-{
+ {
   "cars": [
     {
       "make": "VW",
       "model": "Jetta",
       "year": "2009",
       "price": "$7,000",
-      "color": "white",
+      "color": "grey",
       "purchased": false,
       "description": "Some descriptive text goes here."
     },
@@ -17,7 +14,7 @@
       "model": "Civic",
       "year": "2007",
       "price": "$5,000",
-      "color": "silver",
+      "color": "blue",
       "purchased": false,
       "description": "More descriptive text here."
     },
@@ -26,9 +23,18 @@
       "model": "S320",
       "year": "1997",
       "price": "$10,000",
-      "color": "white",
+      "color": "green",
       "purchased": false,
       "description": "Text here."
+    },
+    {
+      "make": "Toyota",
+      "model": "Mustang",
+      "year": "2013",
+      "price": "$12,000",
+      "color": "black",
+      "purchased": true,
+      "description": "Describe the care.  Blah blah blah.  Text here."
     }
   ]
 }
