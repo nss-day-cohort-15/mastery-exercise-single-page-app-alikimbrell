@@ -1,16 +1,15 @@
-var CarLot = function() {
-  var styleChanges = [];
+var CarLot = (function() {
 
   return {
-    resetBorderAndBackground: function (callback) {
-      return styleChanges;
+    resetBorderAndBackground: function () {
+      
     },
-    changeBorderAndBackground: function (callback) {
-      //something
+    changeBorderAndBackground: function () {
+
     }
   }
 
-};((CarLot) || {});
+});((CarLot) || {});
 
 
 

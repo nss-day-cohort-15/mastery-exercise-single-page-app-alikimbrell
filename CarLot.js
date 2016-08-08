@@ -17,8 +17,7 @@ var CarLot = (function() {
   }
 })(CarLot || {});
 
-
-console.log("CarLot: "+CarLot);
+console.log(CarLot)
 
 
 
