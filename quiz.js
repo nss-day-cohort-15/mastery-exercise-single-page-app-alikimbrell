@@ -7,31 +7,33 @@ function populatePage(inventory) {
       if (count % 3 === 0) {
         output += '<div class="row">';
       }
-      output += `<div class="col-sm-4 carCards">`
+      output += `<div class="col-sm-4 carCards" id="currentCar-${count}" style="border: 4px solid ${currentCar.color}">`;
       output += `<h2>${currentCar.year+" "+currentCar.make+" "+currentCar.model+", "+currentCar.color}</h2>`;
       output += `<h3>${currentCar.price}</h3>`;
       output += `<p>${currentCar.description}</p>`;
       if(currentCar.purchased === false) {
-        output += `<h4>FOR SALE!</h4>`
+        output += `<h4>FOR SALE!</h4>`;
       } else {
-        output += `<h4>(Out-of-stock)</h4>`
+        output += `<h4>(Out-of-stock)</h4>`;
       }
-      
-      output += `</div>`
+      output += `</div>`;
 
       return output; 
 });
 
     var carCardsGrid = document.getElementById("allCardsDiv");
     carCardsGrid.innerHTML = output;
-    console.log("X")
+
+
+
+    console.log("X");
 
   CarLot.activateEvents();
 }
 
-CarLot.loadInventory(populatePage)
+CarLot.loadInventory(populatePage);
 
-// Call ^(), it becomes the callback on CarLot.js.8 and passes the populatePage() as its argument.
+// When call CarLot.loadInventory(populatePage), it becomes the callback on CarLot.js.8 and passes the populatePage() as its argument.
 
 
 
