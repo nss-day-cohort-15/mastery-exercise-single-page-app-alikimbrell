@@ -1,6 +1,8 @@
-function(activate) {
-    activate.activateEvents = function() {
+var CarLot = function(activate) {
+  activate.activateEvents = function() {
   console.log("activateEvents running")
-    }
-    return activate
-}
+  }
+  return activate
+}(CarLot || {});
+
+activate();

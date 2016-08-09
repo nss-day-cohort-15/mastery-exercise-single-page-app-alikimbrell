@@ -16,7 +16,9 @@ function populatePage(inventory) {
       } else {
         output += `<h4>(Out-of-stock)</h4>`
       }
+      // output ++ ``
       output += `</div>`
+
       return output; 
 });
 
