@@ -1,15 +1,14 @@
-var CarLot = (function() {
+var CarLot = (function(DOM) {
 
-  return {
-    resetBorderAndBackground: function () {
+    DOM.resetBorderAndBackground = function () {
       
-    },
-    changeBorderAndBackground: function () {
-
     }
-  }
+    DOM.changeBorderAndBackground = function () {
 
-});((CarLot) || {});
+
+  }
+  return DOM
+})(CarLot || {});
 
 
 

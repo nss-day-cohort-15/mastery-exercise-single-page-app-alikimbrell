@@ -16,7 +16,7 @@ function populatePage(inventory) {
       } else {
         output += `<h4>(Out-of-stock)</h4>`
       }
-      // output ++ ``
+      
       output += `</div>`
 
       return output; 
@@ -24,12 +24,14 @@ function populatePage(inventory) {
 
     var carCardsGrid = document.getElementById("allCardsDiv");
     carCardsGrid.innerHTML = output;
+    console.log("X")
 
   CarLot.activateEvents();
 }
 
-CarLot.loadInventory(populatePage);
+CarLot.loadInventory(populatePage)
 
+// Call ^(), it becomes the callback on CarLot.js.8 and passes the populatePage() as its argument.
 
 
 

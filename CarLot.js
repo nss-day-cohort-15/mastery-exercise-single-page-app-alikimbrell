@@ -2,7 +2,7 @@ var CarLot = (function() {
   var inventory = [];
 
   return {
-    getInventory: function (callback) {
+    getInventory: function () {
       return inventory;
     },
     loadInventory: function (callback) {
@@ -18,11 +18,5 @@ var CarLot = (function() {
 })(CarLot || {});
 
 console.log(CarLot)
-
-
-
-
-
-
 
 
