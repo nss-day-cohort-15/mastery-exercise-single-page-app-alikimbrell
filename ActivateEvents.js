@@ -2,10 +2,16 @@ var CarLot = (function(activate) {
   activate.activateEvents = function() {
   console.log("activateEvents running")
 
-  }
+  var cardsToClick = document.getElementsByClassName("carCards")
+  console.log(cardsToClick)
+  
+  cardsToClick.addEventListener('click', function (changeBorderAndBackgroundClearTextInputValuePutCursorInTextInput)
+
+  // cardsToClick.addEventListener('mouseout', function (resetBorderAndBackground))
+
+  
+
   return activate
+
 })(CarLot || {});
 
-CarLot.activateEvents();
-
-// Wrapping function in IIFE makes return value available outside of the IIFE.  activate.activateEvents is like an alias for calling activateEvents inside the IIFE.

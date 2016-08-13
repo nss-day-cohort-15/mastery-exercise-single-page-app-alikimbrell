@@ -1,0 +1,7 @@
+#cars-grid .cars-card {
+  border: 1 px solid;
+  padding: 5px;
+  margin: 5px 0;
+  float: left;
+  width: 30%;
+}

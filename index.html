@@ -3,7 +3,8 @@
 <head>
   <title>SPA Quiz</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-  <!-- <link rel="stylesheet" href="quiz.css"> -->
+  <link rel="stylesheet" href="quiz.css">
+  <link rel="stylesheet" href="cars.css">
 </head>
 <body>
   <div class="container">
@@ -12,20 +13,23 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <form class="navbar-form navbar-left">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
+            <input type="text" class="form-control" id="userTextInput" placeholder="Description">
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="submit" class="btn btn-default">Update</button>
         </form>
       </div><!-- /.navbar-collapse -->
     </nav>
+    <section id="cars-list"></section>
+    <section class="cars-card" id="cars-grid"></section>
+    <div id="output-target"></div>
     <div id="allCardsDiv">
-    <!-- div.carCards for each inventory item here -->
     </div>
   </div>
-<script src="CarLot.js"></script>
+<!-- <script src="CarLot.js"></script>
 <script src="ActivateEvents.js"></script>
 <script src="quiz.js"></script>
-<script src="Styling.js"></script>
+<script src="Styling.js"></script> -->
+<script src="everything.js"></script>
 
 
 </body>
