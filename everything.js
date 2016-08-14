@@ -21,6 +21,13 @@ var CarLot = (function() {
     },
     activateEvents: function () {
       console.log("Activate events is running.");
+    },
+    styling: function (carDOMelementClicked, colorName) {
+      console.log("Styling is running.");
+
+      // Change the width of the border to a higher value, and change the background color to any other color of your choosing.
+      
+      // Clear the value of the text input in the navbar, and put the cursor in the text input.
 
     }
   }
@@ -50,32 +57,36 @@ function populatePage(inventory) {
     });
   carCardsGrid.innerHTML = output;
 
+////////////////////////////////////
+
   var cards = document.getElementsByClassName("carCards");
   var done = document.getElementsByClassName("clickDone");
 
   function test (MouseEvent) {
+    console.log(event);
     console.log("Clicked card.");
   }
-
   function test2 (MouseEvent) {
+    console.log(event);
     console.log("Clicked Done.");
   }
 
   //Adding event handlers.
   for (var i=0; i<cards.length; i++) {
-    console.log(cards.item(i));
-    cards.item(i).addEventListener("click", test);
-    done.item(i).addEventListener("click", test2);
+    cards.item(i).addEventListener("click", CarLot.activateEvents);
+    done.item(i).addEventListener("click", CarLot.activateEvents);
   }
 
+////////////////////////////////////
+
   // Now that the DOM is loaded, establish all the event listeners needed
-  CarLot.activateEvents(populatePage);
+  // ??? argument = populatePage?
+  CarLot.activateEvents(populatePage); 
 }
 
-// Load the inventory and send a callback function to be invoked after the process is complete.
-
-//Telling the code "Load the inventory and when you're done execute populatePage."
+//"Load the inventory and when you're done execute populatePage."
 CarLot.loadInventory(populatePage);
+
 //At line 17, callbackFunction(privateInventory) is a pointer to the populatePage function.
   console.log("CarLot.loadinventory(populatePage) is running.");
 
