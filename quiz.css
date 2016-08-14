@@ -3,19 +3,18 @@ body {
   padding: 80px;
 }
 
-
 .container {
   width: 100%;
   border: 1px solid red;
 }
 
 .carCards {
-  min-height: 400px;
-  
+  min-height: 300px;
 }
 
-.carCardsOn {
-  border: 8px solid black
+.carCardClicked {
+  border: 8px solid black;
+  min-height: 300px;
   background-color: orange;
 }
 
