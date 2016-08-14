@@ -2,7 +2,7 @@ var CarLot = (function() {
   var inventory = [];
 
   return {
-    getInventory: function (callback) {
+    getInventory: function () {
       return inventory;
     },
     loadInventory: function (callback) {
@@ -12,27 +12,16 @@ var CarLot = (function() {
       inventory = JSON.parse(event.target.responseText).cars;
       callback(inventory);
       });
-      inventoryLoader.send();
+      inventoryLoader.send();  
+    },
+    activateEvents: function () {
+      console.log("Activate events is running.");
+      
     }
-  };
+  }  
 })(CarLot || {});
 
-function changeFunction () {
-  alert("changeFunction works");
-}
-
-function resetFunction () {
-  alert("resetFunction works");
-}
-
-function activateEvents() {
-  var cards = getElementsByClassName("carCards");
-  cards.addEventListener("click", changeFunction);
-  cards.addEventListener("click", resetFunction);
-}
-
 function populatePage(inventory) {
-  
   // Loop over the inventory and populate the page
   var output = "";
   var carCardsGrid = document.getElementById("allCardsDiv");
@@ -56,82 +45,13 @@ function populatePage(inventory) {
     });
   carCardsGrid.innerHTML = output;
 
-
   // Now that the DOM is loaded, establish all the event listeners needed
-  CarLot.activateEvents();
+  CarLot.activateEvents(populatePage);
 }
-
-  //   console.log("Activate events is running.");
   
-  //   return
-  //     change: function () {
-  //      console.log("CarLot.activateEvents(change) is running.")
-  //      
-  //      
-  //     }
-
-  //     reset: function () {
-  //      console.log("CarLot.activateEvents(reset) is running.")
-  //      target.addEventListener("click", functionToExecute)
-  //     }
-
-  // }
-  
-
-
-
 // Load the inventory and send a callback function to be invoked after the process is complete
+
 CarLot.loadInventory(populatePage);
   console.log("CarLot.loadinventory(populatePage) is running.");
 
 
-// When you click on one of the car elements, 
-  // change the width of the border to a higher value, 
-  // change the background color to any other color of your choosing.
-  // clear the value of the text input in the navbar
-  // put the cursor in the text input.
-
-
-// When you start typing into the navbar's text input, 
-  // the description of the currently selected car should be bound to what you are typing in and match it exactly.
-
-
-
-// var CarLot = (function(activate) {
-//   activate.activateEvents = function() {
-//   console.log("activateEvents running")
-
-//   var cardsToClick = document.getElementsByClassName("carCards")
-//   console.log(cardsToClick)
-  
-//   cardsToClick.addEventListener('click', function (changeBorderAndBackgroundClearTextInputValuePutCursorInTextInput)
-
-//   // cardsToClick.addEventListener('mouseout', function (resetBorderAndBackground))
-
-  
-//   return activate
-
-// })(CarLot || {});
-
-
-
-// When call CarLot.loadInventory(populatePage), it becomes the callback on CarLot.js.8 and passes the populatePage() as its argument.
-
-// var CarLot = (function(DOM) {
-
-//     DOM.resetBorderAndBackground = function () {
-//       console.log("DOM.reset running")
-//     }
-//     DOM.changeBorderAndBackgroundClearTextInputValuePutCursorInTextInput = function (e) {
-//       console.log("DOM.change running")
-//       var userInput = document.getElementsByClassName("form-control")     
-//       var target = e.target;
-//       var userText = document.getElementById("userTextInput")
-//       target.addClass(carCardsOn);
-//       userInput.focus();
-//       userText.value="";
-
-
-//   }
-//   return DOM
-// })(CarLot || {});
