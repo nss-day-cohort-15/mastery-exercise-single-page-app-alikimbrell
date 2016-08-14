@@ -22,13 +22,6 @@ var CarLot = (function() {
     activateEvents: function () {
       console.log("Activate events is running.");
 
-      // return {
-      //   changeCard: function () {
-
-      //   },
-      //   resetCard: function () {
-
-      //   }
     }
   }
 })(CarLot || {});
@@ -52,21 +45,34 @@ function populatePage(inventory) {
         output += `<h4>(Out-of-stock)</h4>`;
       }
       output += `<h5 class="clickDone" style="text-decoration: underline">Done</h5>`;
-      // var card = document.getElementById("")
       output += `</div>`;
       return output; 
     });
   carCardsGrid.innerHTML = output;
-  var cards = document.getElementsByClassName("carCards");
-  console.log("cards", cards);
 
+  var cards = document.getElementsByClassName("carCards");
+  var done = document.getElementsByClassName("clickDone");
+
+  function test (MouseEvent) {
+    console.log("Clicked card.");
+  }
+
+  function test2 (MouseEvent) {
+    console.log("Clicked Done.");
+  }
+
+  //Adding event handlers.
+  for (var i=0; i<cards.length; i++) {
+    console.log(cards.item(i));
+    cards.item(i).addEventListener("click", test);
+    done.item(i).addEventListener("click", test2);
+  }
 
   // Now that the DOM is loaded, establish all the event listeners needed
   CarLot.activateEvents(populatePage);
 }
 
 // Load the inventory and send a callback function to be invoked after the process is complete.
-
 
 //Telling the code "Load the inventory and when you're done execute populatePage."
 CarLot.loadInventory(populatePage);
