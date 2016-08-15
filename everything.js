@@ -14,12 +14,20 @@ var CarLot = (function() {
       inventoryLoader.open('get', 'inventory.json');
       inventoryLoader.send();  
     },
+    createEventHandlers: function () {
+      console.log("createEventHandlers is running.");
+      var loopthis = document.getElementsByClassName("carCards");
+      for (var i=0;i<loopthis.length;i++) {
+        loopthis.item(i).addEventListener("click", onCarClick);
+      }
+    }
   }
 })(CarLot || {});
 
 function onCarClick () {
-  // populatePage(CarLot.getInventory);
-  event.currentTarget.className="carCardClicked";
+  console.log("onCarClick is running.");
+  console.log("event: ", event);
+  console.log("event.currentTarget: ", event.currentTarget);
 }
 
 function populatePage(inventory) {
@@ -44,7 +52,7 @@ function populatePage(inventory) {
 
     carCardsGrid.innerHTML = output;
 
-  activateEvents(); 
+  CarLot.createEventHandlers();
 }
 
 CarLot.loadInventory(populatePage);
@@ -52,14 +60,4 @@ CarLot.loadInventory(populatePage);
   // Change the width of the border to a higher value, and change the background color to any other color of your choosing.
 
   // Clear the value of the text input in the navbar, and put the cursor in the text input.
-
-
-function activateEvents() {
-  var loopthis = document.getElementsByClassName("carCards");
-
-  for (var i=0;i<loopthis.length;i++) {
-    loopthis.item(i).addEventListener("click", onCarClick);
-  }
-}
-
 
