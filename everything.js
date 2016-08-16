@@ -24,10 +24,11 @@ var CarLot = (function() {
   }
 })(CarLot || {});
 
-function onCarClick () {
+function onCarClick (car, color) {
   console.log("onCarClick is running.");
   console.log("event: ", event);
   console.log("event.currentTarget: ", event.currentTarget);
+
 }
 
 function populatePage(inventory) {
@@ -37,16 +38,15 @@ function populatePage(inventory) {
     
     inventory.forEach(function (currentCar, count) {
 
-      output += `<div class="col-sm-4 carCards" id="currentCar-${count}" style="border: 4px solid ${currentCar.color}">`;
-      output += `<h2>${currentCar.year+" "+currentCar.make+" "+currentCar.model+", "+currentCar.color}</h2>`;
-      output += `<h3>${currentCar.price}</h3>`;
-      output += `<p>${currentCar.description}</p>`;
-      if(currentCar.purchased === false) {
-        output += `<h4>FOR SALE!</h4>`;
-      } else {
-        output += `<h4>(Out-of-stock)</h4>`;
-      }
-      output += `</div>`;
+      output += 
+      `<div class="col-sm-4 carCards" id="currentCar-${count}" style="border: 4px solid ${currentCar.color}">
+      <h3>${currentCar.purchased}</h3>
+      <h2>${currentCar.year+" "+currentCar.make+" "+currentCar.model}</h2>
+      <h3>${currentCar.color}</h3>
+      <h3>${currentCar.price}</h3>
+      <p>${currentCar.description}</p>
+      </div>`
+
       return output; 
     });
 
